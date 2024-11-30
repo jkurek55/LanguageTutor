@@ -1,10 +1,26 @@
 
 <MainScreen>:
     BoxLayout:
-        Button:
-            text: 'xd'
-        Button:
-            text: 'xd1'
-        Button:
-            text: 'xd2'
-            
+        orientation: 'horizontal'
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.5,1
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+            Label:
+                text: 'LOGO TUTORA'
+            Label:
+            Button:
+                text: 'Load session'
+                on_release: root.change_screen('session_screen')
+            Label:
+            Button:
+                on_release: root.change_screen('new_session_screen')
+                text: 'New session'
+            Label:
+        BoxLayout:
+            size_hint: 0.5,1
+            orientation: 'vertical'
+
+

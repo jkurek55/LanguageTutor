@@ -1,0 +1,21 @@
+
+<SessionScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        MessageScrollView:
+            id: texts_scrollview
+
+            BoxLayout:
+                size_hint_y: None
+                orientation: 'vertical'
+                id: message_layout
+                height: 1000
+
+        BoxLayout:
+            size_hint: 1, 0.1
+            TextInput:
+                id: message_input
+                hint_text: 'Your prompt'
+            Button:
+                size_hint: 0.2, 1
+                text: 'send'

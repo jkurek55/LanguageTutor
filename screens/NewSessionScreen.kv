@@ -1,0 +1,46 @@
+
+<NewSessionScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint: 1, 0.2
+            orientation: 'horizontal'
+            Label:
+                text: 'Choose Your Language Tutor'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: "Choose language"
+                Label:
+                    text: "Choose level"
+                Label:
+                    text: "Choose tutor appearance"
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                Spinner:
+                    values: ['elo', 'elo']
+                Label:
+                Label:
+                Spinner:
+                    values: ['elo', 'elo']
+                Label:
+                Label:
+                Spinner:
+                    values: ['elo', 'elo']
+                Label:
+            BoxLayout:
+        BoxLayout:
+            size_hint: 1, 0.2
+            orientation: 'horizontal'
+            Button:
+                text: 'Get back'
+                on_release: root.change_screen("main_screen")
+            Button:
+                on_release: root.change_screen("session_screen")
+                text: 'Start new session'

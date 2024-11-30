@@ -1,11 +1,11 @@
 import os.path
 
 from kivy.lang import Builder
-from kivy.uix.screenmanager import Screen
+from screens.GenericScreen import *
 
 Builder.load_file(os.path.join('screens', 'MainScreen.kv'))
 
-class MainScreen(Screen):
+class MainScreen(GenericScreen):
     def __init__(self, **kwargs):
         super(MainScreen, self).__init__(**kwargs)
         print('MainScreen init called')
