@@ -1,3 +1,35 @@
+<UserMessage>:
+    height: message_label.height
+    size_hint_y: None
+    Label:
+        size_hint: 0.3, 1
+    BackgroundLabel:
+        id: message_label
+        text: root.message_text
+
+<TutorMessage>:
+    size_hint_y: None
+    height: message_label.height
+    BackgroundLabel:
+        text: root.message_text
+        id: message_label
+    Label:
+        size_hint: 0.3, 1
+
+<BackgroundLabel@Label>:
+    size_hint_y: None
+    height: self.texture_size[1] + 10 if self.text != '' else  50
+    text_size: self.width, None
+    halign: 'left'
+    valign: 'middle'
+    padding: 10, 10
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.6, 0.8, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
 
 <SessionScreen>:
     BoxLayout:
@@ -9,13 +41,19 @@
                 size_hint_y: None
                 orientation: 'vertical'
                 id: message_layout
-                height: 1000
+                padding: 20
+                height: 100
 
         BoxLayout:
             size_hint: 1, 0.1
             TextInput:
                 id: message_input
                 hint_text: 'Your prompt'
+                multiline: False
+                on_text_validate:
+                    root.send_pressed(self.text)
+                    self.text = ''
             Button:
                 size_hint: 0.2, 1
                 text: 'send'
+                on_release: root.send_pressed(message_input.text)
