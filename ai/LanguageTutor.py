@@ -33,6 +33,7 @@ class LanguageTutor:
         self.downsize_context()
 
         return tutor_answer
+
     def get_history(self):
         return self.messages
 
