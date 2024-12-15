@@ -32,7 +32,7 @@ class MainScreenManager(ScreenManager):
 
     def load_settings(self, messages):
         '''tutaj beda wgrywane messages z pliku'''
-        pass
+        self.messages = messages
 
 
 
