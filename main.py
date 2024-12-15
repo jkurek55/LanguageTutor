@@ -5,6 +5,7 @@ from kivy import Config
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.lang import Builder
+from kivy.properties import ListProperty
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.widget import Widget
@@ -21,7 +22,18 @@ Builder.load_file('MainScreenManager.kv')
 class MainScreenManager(ScreenManager):
     def __init__(self, **kwargs):
         super(MainScreenManager, self).__init__(**kwargs)
+        self.messages = []
         print('MainScreen init called')
+
+    def set_settings_for_session(self, language, level, appearance):
+        system_prompt = f'Jesteś miłym konsultantem. {language}. {level}. {appearance}'
+        self.messages = [{"role": "system", "content": system_prompt}]
+
+
+    def load_settings(self, messages):
+        '''tutaj beda wgrywane messages z pliku'''
+        pass
+
 
 
 class LanguageTutorApp(App):

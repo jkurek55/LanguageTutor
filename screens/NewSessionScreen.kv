@@ -24,15 +24,18 @@
                 orientation: 'vertical'
                 Label:
                 Spinner:
-                    values: ['elo', 'elo']
+                    id: language_spinner
+                    values: ['Twój ulubiony kolor to zielony', 'Twój ulubiony kolor to czerwony']
                 Label:
                 Label:
                 Spinner:
-                    values: ['elo', 'elo']
+                    id: level_spinner
+                    values: ['']
                 Label:
                 Label:
                 Spinner:
-                    values: ['elo', 'elo']
+                    id: appearance_spinner
+                    values: ['']
                 Label:
             BoxLayout:
         BoxLayout:
@@ -42,5 +45,6 @@
                 text: 'Get back'
                 on_release: root.change_screen("main_screen")
             Button:
-                on_release: root.change_screen("session_screen")
+                #on_release: root.change_screen("session_screen")
+                on_release: root.start_new_session()
                 text: 'Start new session'

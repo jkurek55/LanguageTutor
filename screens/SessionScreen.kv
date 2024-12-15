@@ -30,10 +30,31 @@
             pos: self.pos
             size: self.size
 
+<BackgroundLabel1@Label>:
+    size_hint_y: None
+    height: self.texture_size[1] + 10 if self.text != '' else  50
+    text_size: self.width, None
+    halign: 'left'
+    valign: 'middle'
+    padding: 10, 10
+    canvas.before:
+        Color:
+            rgba: 0.74, 0.76, 0.78, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
 
 <SessionScreen>:
     BoxLayout:
         orientation: 'vertical'
+        BoxLayout:
+            size_hint: 1, 0.1
+            BackgroundLabel1:
+                rgba: 0.74, 0.76, 0.78, 1
+            Button:
+                size_hint: 0.2, 1
+                text: 'Save and exit'
+                on_release: root.save_and_exit()
         MessageScrollView:
             id: texts_scrollview
 
