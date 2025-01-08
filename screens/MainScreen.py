@@ -11,7 +11,7 @@ class MainScreen(GenericScreen):
         super(MainScreen, self).__init__(**kwargs)
         print('MainScreen init called')
     def load_session(self):
-        with open('session.json', 'r') as file:
+        with open('session.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
 
         self.root.load_settings(data)
