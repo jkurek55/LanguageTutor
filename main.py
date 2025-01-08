@@ -26,12 +26,15 @@ class MainScreenManager(ScreenManager):
         print('MainScreen init called')
 
     def set_settings_for_session(self, language, level, appearance):
+
         system_prompt = f'Jesteś miłym konsultantem. {language}. {level}. {appearance}'
+
+
         self.messages = [{"role": "system", "content": system_prompt}]
 
 
     def load_settings(self, messages):
-        '''tutaj beda wgrywane messages z pliku'''
+        '''tutaj sa wgrywane messages z pliku'''
         self.messages = messages
 
 

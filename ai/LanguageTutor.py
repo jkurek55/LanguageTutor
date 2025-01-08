@@ -10,7 +10,7 @@ openai.api_key = APIKey
 
 class LanguageTutor:
     client = openai.OpenAI(api_key=APIKey)
-    message_limit = 6
+    message_limit = 50
 
     def __init__(self, historic_messages):
         self.messages: list = historic_messages
