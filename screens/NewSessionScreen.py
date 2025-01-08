@@ -21,4 +21,3 @@ class NewSessionScreen(GenericScreen):
 
         self.root.set_settings_for_session(language, level, appearance)
         self.root.current = 'session_screen'
-        # wymyslic gdzie new session screen ma byc wywolywany

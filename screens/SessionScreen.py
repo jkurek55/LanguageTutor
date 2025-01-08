@@ -34,8 +34,6 @@ class TutorMessage(BoxLayout):
         self.message_text = message_text
 
 
-system_query = [{"role": "system", "content": 'Jesteś miłym konsultantem'}]
-
 class SessionScreen(GenericScreen):
     def __init__(self, **kwargs):
         super(SessionScreen, self).__init__(**kwargs)
@@ -45,7 +43,7 @@ class SessionScreen(GenericScreen):
         #self.language_tutor = LanguageTutor(system_query)
         self.language_tutor = LanguageTutor(self.root.messages)
 
-        tutor_greeting = 'Witaj konsultancie'
+        tutor_greeting = ''
 
         self.scroll_view.add_widget(TutorMessage(self.language_tutor.generate_answer(tutor_greeting)))
         #self.scroll_view.add_widget(TutorMessage(tutor_greeting))
