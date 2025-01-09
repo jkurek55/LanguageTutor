@@ -38,12 +38,36 @@ class SessionScreen(GenericScreen):
     def __init__(self, **kwargs):
         super(SessionScreen, self).__init__(**kwargs)
         print('MainScreen init called')
+
+    def old_messages_appeared(self, *args):
+        cumulated_height = 0
+        for child in self.scroll_view.children:
+            cumulated_height += child.height
+
+
+        self.scroll_view.height += cumulated_height
+
+    def view_old_messages(self):
+        for message in self.root.messages:
+            if message['role'] == 'user' and message['content'] != '':
+                self.scroll_view.add_widget(UserMessage(message['content']))
+                self.scroll_view.add_widget(Label(size_hint_y=None, height=20))
+
+            elif message['role'] == 'assistant' and message['content'] != '':
+                self.scroll_view.add_widget(TutorMessage(message['content']))
+                self.scroll_view.add_widget(Label(size_hint_y=None, height=20))
+
+        Clock.schedule_once(self.old_messages_appeared, 0.01)
+
+
     def on_enter(self, *args):
         self.scroll_view = self.ids['message_layout']
         #self.language_tutor = LanguageTutor(system_query)
         self.language_tutor = LanguageTutor(self.root.messages)
 
         tutor_greeting = ''
+
+        self.view_old_messages()
 
         self.scroll_view.add_widget(TutorMessage(self.language_tutor.generate_answer(tutor_greeting)))
         #self.scroll_view.add_widget(TutorMessage(tutor_greeting))
