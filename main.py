@@ -14,6 +14,8 @@ from screens.MainScreen import *
 from screens.NewSessionScreen import *
 from screens.SessionScreen import *
 
+from config.agent_system_settings import *
+
 Builder.load_file('MainScreenManager.kv')
 
 
@@ -27,9 +29,7 @@ class MainScreenManager(ScreenManager):
 
     def set_settings_for_session(self, language, level, appearance):
 
-        system_prompt = f'Jesteś miłym konsultantem. {language}. {level}. {appearance}'
-
-
+        system_prompt = create_agent_system(language, level)
         self.messages = [{"role": "system", "content": system_prompt}]
 
 
