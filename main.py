@@ -28,8 +28,8 @@ class MainScreenManager(ScreenManager):
         print('MainScreen init called')
 
     def set_settings_for_session(self, language, level, appearance):
+
         system_prompt = create_agent_system(language, level)
-        #f'Jesteś miłym konsultantem. {language}. {level}. {appearance}'
         self.messages = [{"role": "system", "content": system_prompt}]
 
 
