@@ -44,7 +44,6 @@ class SessionScreen(GenericScreen):
         for child in self.scroll_view.children:
             cumulated_height += child.height
 
-
         self.scroll_view.height += cumulated_height
 
     def view_old_messages(self):
