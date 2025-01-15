@@ -17,7 +17,7 @@ class NewSessionScreen(GenericScreen):
 
         language = self.ids['language_spinner'].text
         level = self.ids['level_spinner'].text
-        appearance = self.ids['appearance_spinner'].text
-
+        #appearance = self.ids['appearance_spinner'].text
+        appearance = ''
         self.root.set_settings_for_session(language, level, appearance)
         self.root.current = 'session_screen'

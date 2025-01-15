@@ -45,6 +45,11 @@
             size: self.size
 
 <SessionScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'img/background.jpg'
     BoxLayout:
         orientation: 'vertical'
         BoxLayout:
@@ -53,7 +58,7 @@
                 rgba: 0.74, 0.76, 0.78, 1
             Button:
                 size_hint: 0.2, 1
-                text: 'Save and exit'
+                text: 'Zapisz i wyjdź'
                 on_release: root.save_and_exit()
         MessageScrollView:
             id: texts_scrollview
@@ -69,12 +74,12 @@
             size_hint: 1, 0.1
             TextInput:
                 id: message_input
-                hint_text: 'Your prompt'
+                hint_text: 'Napisz wiadomość'
                 multiline: False
                 on_text_validate:
                     root.send_pressed(self.text)
                     self.text = ''
             Button:
                 size_hint: 0.2, 1
-                text: 'send'
+                text: 'wyślij'
                 on_release: root.send_pressed(message_input.text)

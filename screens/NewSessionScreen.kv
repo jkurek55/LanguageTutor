@@ -1,12 +1,17 @@
 
 <NewSessionScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'img/background.jpg'
     BoxLayout:
         orientation: 'vertical'
         BoxLayout:
             size_hint: 1, 0.2
             orientation: 'horizontal'
             Label:
-                text: 'Choose Your Language Tutor'
+                text: 'Wybierz opcje tutora'
 
         BoxLayout:
             orientation: 'horizontal'
@@ -15,11 +20,11 @@
             BoxLayout:
                 orientation: 'vertical'
                 Label:
-                    text: "Choose language"
+                    text: "Wybierz język"
                 Label:
-                    text: "Choose level"
-                Label:
-                    text: "Choose tutor appearance"
+                    text: "Wybierz poziom"
+                #Label:
+                #    text: "Choose tutor appearance"
             BoxLayout:
                 orientation: 'vertical'
                 Label:
@@ -32,19 +37,19 @@
                     id: level_spinner
                     values: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
                 Label:
-                Label:
-                Spinner:
-                    id: appearance_spinner
-                    values: ['']
-                Label:
+                #Label:
+                #Spinner:
+                #    id: appearance_spinner
+                #    values: ['']
+                #Label:
             BoxLayout:
         BoxLayout:
             size_hint: 1, 0.2
             orientation: 'horizontal'
             Button:
-                text: 'Get back'
+                text: 'Wróć'
                 on_release: root.change_screen("main_screen")
             Button:
                 #on_release: root.change_screen("session_screen")
                 on_release: root.start_new_session()
-                text: 'Start new session'
+                text: 'Rozpocznij nową sesję'

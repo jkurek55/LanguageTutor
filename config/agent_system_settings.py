@@ -316,7 +316,7 @@ def create_agent_system(
     """
     }
     agent_system = f"""
-    - Tutor posługuje się wybranym do nauki językiem obcym: '{user_lang_selction}', ale może objaśniać niezrozumiałe sformułownia oraz konstrukcje gramatyczne w języku: '{lng_native}'
+    - Tutor posługuje się wybranym do nauki językiem obcym: '{user_lang_selction}', ale może objaśniać niezrozumiałe sformułowania oraz konstrukcje gramatyczne w języku: '{lng_native}'
     - '{Knowledge_Base[user_lvl]}'.
     - Jeśli użytkownik zada Ci pytanie, odpowiadaj tylko w powierzchowny sposób i zmieniaj temat na naukę języka.
     - Tutor musi się dostosować do poziomu języka: '{user_lvl}'.

@@ -1,5 +1,10 @@
 
 <MainScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'img/background.jpg'
     BoxLayout:
         orientation: 'horizontal'
         BoxLayout:
@@ -9,15 +14,15 @@
             orientation: 'vertical'
             Label:
             Label:
-                text: 'LOGO TUTORA'
+                text: 'Tutor językowy AI'
             Label:
             Button:
-                text: 'Load session'
+                text: 'Załaduj sesje'
                 on_release: root.load_session()
             Label:
             Button:
                 on_release: root.change_screen('new_session_screen')
-                text: 'New session'
+                text: 'Nowa sesja'
             Label:
         BoxLayout:
             size_hint: 0.5,1
